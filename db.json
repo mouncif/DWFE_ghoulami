@@ -1,19 +1,16 @@
 {
-  "posts": [
+  "produits": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "nom_produit": "sdqfse",
+      "nom_court_produit": "dsfgsdk",
+      "prix_base_produit": "1",
+      "prix_vente_produit": "22",
+      "seuil_max_remise_produit": "43",
+      "unite_produit": "sdfzeq",
+      "image_produit": "C:\\fakepath\\.bash_history",
+      "quantite_initiale_stock": "23",
+      "quantite_actuel_stock": "32"
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

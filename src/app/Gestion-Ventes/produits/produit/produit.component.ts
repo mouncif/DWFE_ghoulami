@@ -9,6 +9,8 @@ import { Router } from "@angular/router";
   styleUrls: ["./produit.component.css"]
 })
 export class ProduitComponent implements OnInit {
+  constructor(private service: ProduitService, private router: Router) {}
+
   private produit: Produit = {
     nom_produit: "",
     nom_court_produit: "",
@@ -23,7 +25,40 @@ export class ProduitComponent implements OnInit {
 
   produits: Produit[] = [];
 
-  constructor(private service: ProduitService, private router: Router) {}
+  onClear() {
+    this.service.initializeFormGroup();
+    this.service.form.reset();
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.service.findAll();
+  }
+
+  add() {
+    this.service.add(this.produit).subscribe(produit => {
+      this.produits = [produit, ...this.produits];
+    });
+  }
+
+  update() {
+    this.service
+      .update(this.produit)
+      .subscribe(() => this.router.navigateByUrl("/list"));
+  }
+
+  onSubmit() {
+    if (this.service.form.valid) {
+      this.produit = this.service.form.value;
+      if (this.service.form.value.id == null) {
+        console.log(this.produit);
+        this.add();
+        this.service.form.reset();
+      } else {
+        console.log(this.produit);
+        this.update();
+        this.service.form.reset();
+      }
+      this.service.initializeFormGroup();
+    }
+  }
 }
