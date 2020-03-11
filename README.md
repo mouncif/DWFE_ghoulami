@@ -4,8 +4,19 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Demo
 
-View the live preview for the of the application here :
+Vous pouvez consultez l'aaplication sur stackblitz, pour tester les differents fonctionalités de l'application il faut telecharger le fichier db.json dans le repo et lancer le json server avec la commande json-server db.json --watch   :
 https://stackblitz.com/github/mouncif/DWFE_ghoulami
+
+## Technologies/outils utilisées
+
+<ul>
+  <li>Angular</li>
+  <li>Bootstrap 4</li>
+  <li>Angular material</li>
+  <li>Json-Server</li>
+</ul>
+
+## ScreenShoot
 
 ## Development server
 
