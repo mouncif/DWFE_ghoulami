@@ -1,16 +1,133 @@
 {
-  "produits": [
+  "produit": [
+    {
+      "id": 3,
+      "nom": "sf",
+      "nomCourt": "sdgqsd",
+      "prixBase": "012",
+      "prixVente": "022",
+      "maxRemise": "012",
+      "unite": "sqfs",
+      "image": "https://media.gettyimages.com/photos/cropped-image-of-person-eye-picture-id942369796?s=612x612",
+      "qteInitial": "12",
+      "qteActuel": "23"
+    },
+    {
+      "id": 4,
+      "nom": "wcqs",
+      "nomCourt": "wx",
+      "prixBase": "22",
+      "prixVente": "032",
+      "maxRemise": "22",
+      "unite": "xcs",
+      "image": "https://media.gettyimages.com/photos/cropped-image-of-person-eye-picture-id942369796?s=612x612",
+      "qteInitial": "32",
+      "qteActuel": "34"
+    },
+    {
+      "id": 5,
+      "nom": "sqfza",
+      "nomCourt": "qsdz",
+      "prixBase": "22",
+      "prixVente": "12",
+      "maxRemise": "32",
+      "unite": "sqd",
+      "image": "https://media.gettyimages.com/photos/cropped-image-of-person-eye-picture-id942369796?s=612x612",
+      "qteInitial": "11",
+      "qteActuel": "332"
+    },
+    {
+      "id": 7,
+      "nom": "ELMEHDI GHOULAMI",
+      "nomCourt": "ELMEHDI GHOULAMI",
+      "prixBase": 0,
+      "prixVente": 0,
+      "maxRemise": 0,
+      "unite": "fkjhjk",
+      "image": "https://media.gettyimages.com/photos/cropped-image-of-person-eye-picture-id942369796?s=612x612",
+      "qteInitial": 0,
+      "qteActuel": 0
+    },
+    {
+      "id": 8,
+      "nom": "ELMEHDI GHOULAMI",
+      "nomCourt": "ELMEHDI GHOULAMI",
+      "prixBase": 0.5,
+      "prixVente": 1,
+      "maxRemise": 2,
+      "unite": "unite 2",
+      "image": "https://www.presse-citron.net/wordpress_prod/wp-content/uploads/2018/11/facebook-photo-3d.jpg",
+      "qteInitial": 45,
+      "qteActuel": 22
+    },
+    {
+      "id": 9,
+      "nom": "ELMEHDI GHOULAMI",
+      "nomCourt": "ELMEHDI GHOULAMI",
+      "prixBase": 56,
+      "prixVente": 56,
+      "maxRemise": 400,
+      "unite": "unite 2",
+      "image": "https://media.gettyimages.com/photos/cropped-image-of-person-eye-picture-id942369796?s=612x612",
+      "qteInitial": 4,
+      "qteActuel": 33
+    }
+  ],
+  "fournisseur": [
     {
       "id": 1,
-      "nom_produit": "sdqfse",
-      "nom_court_produit": "dsfgsdk",
-      "prix_base_produit": "1",
-      "prix_vente_produit": "22",
-      "seuil_max_remise_produit": "43",
-      "unite_produit": "sdfzeq",
-      "image_produit": "C:\\fakepath\\.bash_history",
-      "quantite_initiale_stock": "23",
-      "quantite_actuel_stock": "32"
+      "nom": "dsgsqd",
+      "nomCourt": "sqdfdq",
+      "ville": "sdgsq",
+      "adresse": "sdqg",
+      "telFix": "sdgze",
+      "telMobile": "sdgze",
+      "telFax": "sdgqzekdjkes",
+      "email": "sdfzesdgjsdhjgsdqk"
+    }
+  ],
+  "client": [
+    {
+      "id": 1,
+      "nom": "GHOULAM",
+      "prenom": "ELMEHDI",
+      "statut": "Statut 3",
+      "photo": "https://media.gettyimages.com/photos/cropped-image-of-person-eye-picture-id942369796?s=612x612",
+      "tel": "4567890987657",
+      "email": "ghoulami97@gmail.com",
+      "adresse": "OULED ZMAM FQUI BEN SALEH",
+      "ville": "sdgre"
+    },
+    {
+      "id": 2,
+      "nom": "sqjf",
+      "prenom": "ELMEHDI",
+      "statut": "Statut 2",
+      "photo": "https://media.gettyimages.com/photos/cropped-image-of-person-eye-picture-id942369796?s=612x612",
+      "tel": "4567894567",
+      "email": "ghoulami97@gmail.com",
+      "adresse": "OULED ZMAM FQUI BEN SALEH",
+      "ville": "FQUIH BEN SALH"
+    }
+  ],
+  "utilisateur": [
+    {
+      "id": 1,
+      "profile": "Editor",
+      "statut": "Statut 2",
+      "photo": "C:\\fakepath\\Capture.PNG",
+      "email": "sdgq@jsqfhq.com",
+      "dateCreation": "2020-03-17T23:00:00.000Z",
+      "dateFin": "2020-03-30T22:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "profile": "User",
+      "statut": "Statut 2",
+      "photo": "https://i.pinimg.com/236x/91/53/02/9153023ff668d5dbac5cd5176163ae4f.jpg",
+      "email": "ghoulami97@gmail.com",
+      "dateCreation": "2020-03-26T23:00:00.000Z",
+      "dateFin": "2020-03-27T23:00:00.000Z"
     }
   ]
 }
