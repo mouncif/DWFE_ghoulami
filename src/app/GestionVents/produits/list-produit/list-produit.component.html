@@ -1,0 +1,75 @@
+<mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="listData" matSort class="mat-elevation-z8">
+
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nom">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom </th>
+            <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nomCourt">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> nomCourt </th>
+            <td mat-cell *matCellDef="let element"> {{element.nomCourt}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="prixBase">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Prix Base </th>
+            <td mat-cell *matCellDef="let element"> {{element.prixBase}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="prixVente">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Prix Vente </th>
+            <td mat-cell *matCellDef="let element"> {{element.prixVente}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="maxRemise">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Max Remise </th>
+            <td mat-cell *matCellDef="let element"> {{element.maxRemise}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="unite">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Unite </th>
+            <td mat-cell *matCellDef="let element"> {{element.unite}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="qteInitial">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Qte Initial </th>
+            <td mat-cell *matCellDef="let element"> {{element.qteInitial}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="qteActuel">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Qte Actuel </th>
+            <td mat-cell *matCellDef="let element"> {{element.qteActuel}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="image">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> image </th>
+            <td  mat-cell *matCellDef="let element"><img *ngIf="element.image" [src]="element.image" width="80px" height="80px"></td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let row">
+                <button mat-icon-button (click)="onEdit(row)">
+                    <mat-icon>launch</mat-icon>
+                </button>
+                <button mat-icon-button (click)="onDelete(row.id)" color="warn">
+                    <mat-icon>delete_outline</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

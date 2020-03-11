@@ -1,0 +1,63 @@
+<div class="row  no-gutters" style="min-height: 100vh;">
+    <!-- Sidebar  -->
+    <div class="col-2" style="background: #343232;">
+        <nav id="sidebar">
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="far fa-dumpster"></i>
+                        Gestion de ventes
+                    </a>
+                    <ul class="collapse list-unstyled px-3" id="homeSubmenu">
+                        <li routerLinkActive ="active">
+                            <a routerLink = "/produits">
+                                <i class="fas fa-bags-shopping"></i>
+                                Produit
+                            </a>
+                        </li>
+                        <li routerLinkActive ="active">
+                            <a routerLink = "/fournisseurs">
+                                <i class="fad fa-handshake"></i>
+                                Fournisseur
+                            </a>
+                        </li>
+                        <li routerLinkActive ="active">
+                            <a routerLink = "/clients">
+                                <i class="fas fa-user-crown"></i>
+                                Client
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li routerLinkActive ="active">
+                    <a routerLink="/users">
+                        <i class="fas fa-address-card"></i>
+                        utilisateur et droits
+                    </a>
+                </li>
+                <li routerLinkActive ="active">
+                    <a routerLink="/about">
+                        <i class="fad fa-exclamation-circle"></i>
+                        About
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Page Content  -->
+    <div class="col-10 h-100">
+        <div id="content" class="m-0">
+            <nav aria-label="breadcrumb" style="background-color: #752E4A;">
+                <ol class="breadcrumb px-5" style="background-color: #752E4A;">
+                    <li class="breadcrumb-item text-white active" aria-current="page">Home</li>
+                    <li *ngFor="let item of path ; let i = index" class="breadcrumb-item text-white active" aria-current="page">{{item}}</li>
+                </ol>
+                <h1 class="display-5 px-5 pb-3 text-white">{{path[last]}}</h1>
+            </nav>
+            <div class="contenu p-3 h-100">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

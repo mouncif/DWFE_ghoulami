@@ -1,30 +1,28 @@
 import { Component, OnInit } from "@angular/core";
-import { Produit } from "../../../models/product";
-import { ProduitService } from "../../../../services/produit.service";
 import { Router } from "@angular/router";
+import { Produit } from '../../../models/produit';
+import { ProduitService } from '../../../services/produit.service';
 
 @Component({
-  selector: "app-produit",
+  selector: "app-produits",
   templateUrl: "./produit.component.html",
   styleUrls: ["./produit.component.css"]
 })
 export class ProduitComponent implements OnInit {
-  constructor(private service: ProduitService, private router: Router) {}
-
   private produit: Produit = {
-    nom_produit: "",
-    nom_court_produit: "",
-    prix_base_produit: 0,
-    prix_vente_produit: 0,
-    seuil_max_remise_produit: 0,
-    unite_produit: "",
-    image_produit: "",
-    quantite_initiale_stock: 0,
-    quantite_actuel_stock: 0
+    nom: "",
+    nomCourt: "",
+    prixBase: 0,
+    prixVente: 0,
+    maxRemise: 0,
+    unite: "",
+    image: "",
+    qteInitial: 0,
+    qteActuel: 0
   };
-
+  //image : string = "";
   produits: Produit[] = [];
-
+  constructor(public service: ProduitService, private router: Router) {}
   onClear() {
     this.service.initializeFormGroup();
     this.service.form.reset();
@@ -37,13 +35,15 @@ export class ProduitComponent implements OnInit {
   add() {
     this.service.add(this.produit).subscribe(produit => {
       this.produits = [produit, ...this.produits];
+      this.service.form.reset();
+      this.router.navigate(["/produits/"]);
     });
   }
 
   update() {
     this.service
       .update(this.produit)
-      .subscribe(() => this.router.navigateByUrl("/list"));
+      .subscribe(() => this.router.navigate(["/produits/"]));
   }
 
   onSubmit() {
@@ -52,7 +52,6 @@ export class ProduitComponent implements OnInit {
       if (this.service.form.value.id == null) {
         console.log(this.produit);
         this.add();
-        this.service.form.reset();
       } else {
         console.log(this.produit);
         this.update();
@@ -61,4 +60,8 @@ export class ProduitComponent implements OnInit {
       this.service.initializeFormGroup();
     }
   }
+
+  // onInputFile(event : Event){
+  //   this.image = (<HTMLInputElement>event.target).value;
+  // }
 }

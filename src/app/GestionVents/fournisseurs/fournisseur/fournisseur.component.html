@@ -1,0 +1,69 @@
+<div class="main-menu-area mg-tb-40">
+    <div class="m-4">
+        <form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+            <mat-card>
+                <mat-card-content>
+                    <mat-card-title>Ajouter un fournisseur</mat-card-title>
+                    <mat-accordion>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title> nouveau fournisseur </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <input type="hidden" formControlName="id">
+                            <mat-form-field>
+                                <input formControlName="nom" matInput placeholder="Nom du fournisseur">
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input formControlName="nomCourt" matInput placeholder="Nom court du fournisseur,">
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input formControlName="ville" matInput placeholder="Ville du fournisseur">
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input formControlName="adresse" matInput placeholder="Adresse du fournisseur">
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input formControlName="telFix" matInput placeholder="Tel Fix du fournisseur">
+                                <mat-error *ngIf="service.form.controls['telFix'].errors?.required">This field is
+                                    mandatory.</mat-error>
+                                <mat-error *ngIf="service.form.controls['telFix'].errors?.minlength">Minimum 8
+                                    charactors needed.</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input formControlName="telMobile" matInput placeholder="Tel Mobile du fournisseur">
+                                <mat-error *ngIf="service.form.controls['telMobile'].errors?.required">This field is
+                                    mandatory.</mat-error>
+                                <mat-error *ngIf="service.form.controls['telMobile'].errors?.minlength">Minimum 8
+                                    charactors needed.</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input formControlName="telFax" matInput placeholder="Tel Fax du fournisseur">
+                                <mat-error *ngIf="service.form.controls['telFax'].errors?.required">This field is
+                                    mandatory.</mat-error>
+                                <mat-error *ngIf="service.form.controls['telFax'].errors?.minlength">Minimum 8
+                                    charactors needed.</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input formControlName="email" matInput placeholder="Email du fournisseur">
+                                <mat-error>Invalid email address.</mat-error>
+                            </mat-form-field>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </mat-card-content>
+
+                <div class="button-row">
+                    <button mat-raised-button color="primary" type="submit"
+                        [disabled]="service.form.invalid">Submit</button>
+                    <button mat-raised-button color="warn" type="reset" (click)="onClear()">Clear</button>
+                </div>
+            </mat-card>
+        </form>
+    </div>
+</div>

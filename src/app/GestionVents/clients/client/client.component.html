@@ -1,0 +1,75 @@
+<div class="main-menu-area mg-tb-40">
+    <div class="m-4">
+        <form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+            <mat-card>
+                <mat-card-content>
+                    <mat-card-title>Ajouter un client</mat-card-title>
+                    <mat-accordion>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title> nouveau client </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <input type="hidden" formControlName="id">
+                            <mat-form-field>
+                                <input formControlName="nom" matInput placeholder="Nom du client">
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input formControlName="prenom" matInput placeholder="Prenom du client">
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Statut du client</mat-label>
+                                <mat-select formControlName="statut" placeholder="Statut du client">
+                                    <mat-option value="Statut 1">
+                                        Statut 1
+                                    </mat-option>
+
+                                    <mat-option value="Statut 2">
+                                        Statut 2
+                                    </mat-option>
+
+                                    <mat-option value="Statut 3">
+                                        Statut 3
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input formControlName="tel" matInput placeholder="Tel du client">
+                                <mat-error *ngIf="service.form.controls['tel'].errors?.required">This field is
+                                    mandatory.</mat-error>
+                                <mat-error *ngIf="service.form.controls['tel'].errors?.minlength">Minimum 8
+                                    charactors needed.</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input formControlName="email" matInput placeholder="Email du client">
+                                <mat-error>Invalid email address.</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input formControlName="adresse" matInput placeholder="Adresse du client">
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input formControlName="ville" matInput placeholder="Ville">
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input type="text" formControlName="photo" matInput placeholder="Url de la Photo du client">
+                            </mat-form-field>
+
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </mat-card-content>
+
+                <div class="button-row">
+                    <button mat-raised-button color="primary" type="submit"
+                        [disabled]="service.form.invalid">Submit</button>
+                    <button mat-raised-button color="warn" type="reset" (click)="onClear()">Clear</button>
+                </div>
+            </mat-card>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+<div class="main-menu-area mg-tb-40">
+    <div class="m-4">
+        <form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+            <mat-card>
+                <mat-card-content>
+                    <mat-card-title>Ajouter un utilisateur</mat-card-title>
+                    <mat-accordion>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title> nouveau utilisateur </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <input type="hidden" formControlName="id">
+                            <mat-form-field>
+                                <mat-label>Statut du utilisateur</mat-label>
+                                <mat-select formControlName="profile" placeholder="Profile du utilisateur">
+                                    <mat-option value="User">
+                                        User
+                                    </mat-option>
+
+                                    <mat-option value="Editor">
+                                        Editor
+                                    </mat-option>
+
+                                    <mat-option value="admin">
+                                        admin
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Statut du utilisateur</mat-label>
+                                <mat-select formControlName="statut" placeholder="Statut du utilisateur">
+                                    <mat-option value="Statut 1">
+                                        Statut 1
+                                    </mat-option>
+
+                                    <mat-option value="Statut 2">
+                                        Statut 2
+                                    </mat-option>
+
+                                    <mat-option value="Statut 3">
+                                        Statut 3
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input formControlName="email" matInput placeholder="Email du utilisateur">
+                                <mat-error>Invalid email address.</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input formControlName="dateCreation" matInput [matDatepicker]="pickerDateC"
+                                    placeholder="Date creation">
+                                <mat-datepicker-toggle matSuffix [for]="pickerDateC"></mat-datepicker-toggle>
+                                <mat-datepicker #pickerDateC></mat-datepicker>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input formControlName="dateFin" matInput [matDatepicker]="pickerDateF"
+                                    placeholder="Date fin">
+                                <mat-datepicker-toggle matSuffix [for]="pickerDateF"></mat-datepicker-toggle>
+                                <mat-datepicker #pickerDateF></mat-datepicker>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input type="text" formControlName="photo" matInput placeholder="Url de la Photo du utilisateur">
+                            </mat-form-field>
+
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </mat-card-content>
+
+                <div class="button-row">
+                    <button mat-raised-button color="primary" type="submit"
+                        [disabled]="service.form.invalid">Submit</button>
+                    <button mat-raised-button color="warn" type="reset" (click)="onClear()">Clear</button>
+                </div>
+            </mat-card>
+        </form>
+    </div>
+</div>

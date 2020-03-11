@@ -7,26 +7,24 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { MaterialModule } from "./material/material.module";
-import { NavbarComponent } from "./navbar/navbar.component";
-import { SideBareComponent } from "./side-bare/side-bare.component";
-import { FournisseurComponent } from "./Gestion-Ventes/fournisseur/fournisseur.component";
-import { ClientComponent } from "./Gestion-Ventes/client/client.component";
-import { ProduitsComponent } from "./Gestion-Ventes/produits/produits.component";
-import { ProduitService } from "../services/produit.service";
-import { ProduitComponent } from "./Gestion-Ventes/produits/produit/produit.component";
-import { PanelComponent } from "./panel/panel.component";
+import { NavbarComponent } from './navbar/navbar.component';
+import { LayoutComponent } from './layout/layout.component';
+import { ProduitComponent } from './GestionVents/produits/produit/produit.component';
+import { ClientComponent } from './GestionVents/clients/client/client.component';
+import { UtilisateurComponent } from './utilisateurs/utilisateur/utilisateur.component';
+import { AboutComponent } from './about/about.component';
+import { ProduitsComponent } from './GestionVents/produits/produits.component';
+import { ListProduitComponent } from './GestionVents/produits/list-produit/list-produit.component';
+import { FournisseursComponent } from './GestionVents/fournisseurs/fournisseurs.component';
+import { FournisseurComponent } from './GestionVents/fournisseurs/fournisseur/fournisseur.component';
+import { ListFournisseurComponent } from './GestionVents/fournisseurs/list-fournisseur/list-fournisseur.component';
+import { ClientsComponent } from './GestionVents/clients/clients.component';
+import { UtilisateursComponent } from './utilisateurs/utilisateurs.component';
+import { ListUtilisateurComponent } from './utilisateurs/list-utilisateur/list-utilisateur.component';
+import { ListClientComponent } from './GestionVents/clients/list-client/list-client.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    SideBareComponent,
-    ProduitComponent,
-    FournisseurComponent,
-    ClientComponent,
-    ProduitsComponent,
-    PanelComponent
-  ],
+  declarations: [AppComponent, NavbarComponent, LayoutComponent, ProduitComponent, ClientComponent, UtilisateurComponent, AboutComponent, ProduitsComponent, ListProduitComponent, FournisseursComponent, FournisseurComponent, ListFournisseurComponent, ClientsComponent, UtilisateursComponent, ListUtilisateurComponent , ListClientComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -36,7 +34,7 @@ import { PanelComponent } from "./panel/panel.component";
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ProduitService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
